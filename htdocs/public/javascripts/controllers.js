@@ -45,9 +45,3 @@ app.controller('stap2Ctrl', ['$scope', 'register',
     }
   }
 ]);
-
-app.controller('stap3Ctrl', ['$scope', 'qrcode',
-  function($scope, qrcode) {
-    
-  }
-]);

@@ -19,10 +19,5 @@ app.config([
         url: '/stap2',
         templateUrl: '/stap2.html',
         controller: 'stap2Ctrl'
-      })
-      .state('stap4', {
-        url: '/stap4',
-        templateUrl: '/stap4.html',
-        controller: 'stap4Ctrl'
       });
 }]);
