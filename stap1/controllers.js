@@ -13,5 +13,7 @@ function($scope, colour){
     colour.changeColour($scope.rood, $scope.groen, $scope.blauw);
   }
 
+  $scope.turnOff = function() {
 
+  }
 }]);

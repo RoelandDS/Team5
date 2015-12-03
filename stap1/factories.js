@@ -58,5 +58,17 @@ app.factory('colour', ['$http', function($http) {
     });
   }
 
+  o.turnOff = function() {
+    return $http.put("http://10.0.1.3/api/13c6eb73373cbacf3052be6b1221247/lights/12/state", {"on": false}).success(function(){
+
+    });
+  }
+
+  o.turnOn = function() {
+    return $http.put("http://10.0.1.3/api/13c6eb73373cbacf3052be6b1221247/lights/12/state", {"on": true}).success(function(){
+
+    });
+  }
+
   return o;
 }]);
