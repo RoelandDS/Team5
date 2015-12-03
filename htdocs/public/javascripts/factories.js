@@ -75,7 +75,7 @@ app.factory('colour', ['$http', function($http) {
 }]);
 
 app.factory('register', ['$http', function($http) {
-  var o = {}
+  var o = {};
 
   o.register = function(teamname, firstTeam, secondTeam) {
     var data = {
@@ -89,6 +89,16 @@ app.factory('register', ['$http', function($http) {
     return $http.put("https://hackthefuture.herokuapp.com/dashboard/team",
       data).success(function(data) {
     });
+  }
+
+  return o;
+}]);
+
+app.factory('qrcode', ['$http', function($http) {
+  var o = {};
+
+  o.qrcode = function() {
+    
   }
 
   return o;
