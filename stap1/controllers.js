@@ -1,10 +1,14 @@
 var app = angular.module('hackthefuture');
 
 app.controller('MainCtrl', [
-  '$scope', 'colour',
-  function($scope, colour) {
-    $scope.colour = colour.colour;
+  '$scope',
+  function($scope) {
 
+  }
+]);
+
+app.controller('stap1Ctrl', ['$scope', 'colour',
+  function($scope, colour){
     $scope.red = function() {
       colour.changeColour(255, 0, 0);
     }
@@ -27,6 +31,17 @@ app.controller('MainCtrl', [
 
     $scope.turnOn = function() {
       colour.turnOn();
+    }
+  }
+]);
+
+app.controller('stap2Ctrl', ['$scope', 'register',
+  function($scope, register){
+    $scope.register = function() {
+      if(!$scope.teamname || !$scope.teamname === '' || !$scope.firstTeam ||
+        !$scope.firstTeam === '' || !$scope.secondTeam || !$scope.secondTeam === '') { return; }
+
+      register.register($scope.teamname, $scope.firstTeam, $scope.secondTeam);
     }
   }
 ]);

@@ -73,3 +73,23 @@ app.factory('colour', ['$http', function($http) {
 
   return o;
 }]);
+
+app.factory('register', ['$http', function($http) {
+  var o = {}
+
+  o.register = function(teamname, firstTeam, secondTeam) {
+    var data = {
+      name: teamname,
+      members: [
+        {name: firstTeam},
+        {name: secondTeam}
+      ]
+    };
+
+    return $http.put("https://hackthefuture.herokuapp.com/dashboard/team",
+      data).success(function(data) {
+    });
+  }
+
+  return o;
+}]);
