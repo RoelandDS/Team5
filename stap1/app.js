@@ -1,23 +1,4 @@
-var app = angular.module('stap1', ['ui.router']);
-
-app.config([
-  '$stateProvider',
-  '$urlRouterProvider',
-  function($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/home',
-        templateUrl: '/home.html',
-        controller: 'MainCtrl',
-        resolve: {
-          postPromise: ['colour', function(colour) {
-            return colour.getAll();
-          }]
-        }
-      });
-
-    $urlRouterProvider.otherwise('home');
-}]);
+var app = angular.module('hackthefuture', ['ui.router']);
 
 app.factory('colour', ['$http', function($http, API) {
   var o = {
@@ -57,7 +38,9 @@ app.controller('MainCtrl', [
 function($scope, colour){
   $scope.colour = colour.colour;
 
-  $scope.putColour = function() {
-    if(!$scope.apikey || !$scope.lightnumber) { return; }
+  $scope.changeColour = function() {
+    if(!$scope.apikey || !$scope.lightnumber || !$scope.colour) { return; }
+
+    console.log($scope.colour);
   }
 }]);
