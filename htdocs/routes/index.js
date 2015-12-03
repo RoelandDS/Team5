@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.json({"team":"Team 5",
+  res.json({"name":"Team 5",
     "members": [
       {"name": "Rutger Benoot"},
       {"name": "Gaetano Herman"}
