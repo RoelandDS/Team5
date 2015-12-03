@@ -3,10 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.json({"team":"Team 8",
+  res.json({"team":"Team 5",
     "members": [
-      {"name": "Tom"},
-      {"name": "Barry"}
+      {"name": "Rutger Benoot"},
+      {"name": "Gaetano Herman"}
     ]});
 });
 
