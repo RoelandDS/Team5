@@ -98,7 +98,9 @@ app.factory('qrcode', ['$http', function($http) {
   var o = {};
 
   o.qrcode = function() {
-    
+    $http.get('/qrcode').success(function(data) {
+
+    })
   }
 
   return o;

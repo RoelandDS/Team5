@@ -28,12 +28,11 @@ router.get('/qrcode', function(req, res, next) {
   connection.query('SELECT img_data FROM training.qr_code where img_title like \'%Team 5%\'', function(err, rows, fields) {
     if (err) next(err);
 
-    var buffer = new Buffer(rows[0].img_data);
-    var bufferBase64 = buffer.toString('base64');
+    var buffer = new Buffer(rows[0].img_data, 'base64');
 
-    res.send(bufferBase64);
+    res.write(buffer);
   });
   connection.end();
-})
+});
 
 module.exports = router;
