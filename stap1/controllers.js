@@ -5,28 +5,28 @@ app.controller('MainCtrl', [
   function($scope, colour) {
     $scope.colour = colour.colour;
 
-    $scope.changeColour = function(colour) {
-      switch (colour) {
-        case rood:
-          colour.changeColour();
-          break;
-        case groen:
+    $scope.red = function() {
+      colour.changeColour(255, 0, 0);
+    }
 
-          break;
-        case geel:
+    $scope.yellow = function() {
+      colour.changeColour(255, 255, 0);
+    }
 
-          break;
-        case blauw:
+    $scope.blue = function() {
+      colour.changeColour(0, 0, 255);
+    }
 
-          break;
-        default:
-
-      }
-      colour.changeColour($scope.rood, $scope.groen, $scope.blauw);
+    $scope.green = function() {
+      colour.changeColour(0, 255, 0);
     }
 
     $scope.turnOff = function() {
+      colour.turnOff();
+    }
 
+    $scope.turnOn = function() {
+      colour.turnOn();
     }
   }
 ]);
