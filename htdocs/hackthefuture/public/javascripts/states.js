@@ -20,6 +20,4 @@ app.config([
         templateUrl: '/stap2.html',
         controller: 'stap2Ctrl'
       });
-
-    $urlRouterProvider.otherwise('home');
 }]);

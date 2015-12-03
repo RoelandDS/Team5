@@ -3,7 +3,15 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.json({"team":"Team 8",
+    "members": [
+      {"name": "Tom"},
+      {"name": "Barry"}
+    ]});
+});
+
+router.get('/index', function(req, res, next) {
+  res.render('index');
 });
 
 module.exports = router;
